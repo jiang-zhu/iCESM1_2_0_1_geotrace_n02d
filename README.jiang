@@ -1,0 +1,6 @@
+
+changed models/atm/cam/bld/namelist_files/namelist_defaults_cam.xml
+792c792
+< <cldfrc_rhminl hgrid="1.9x2.5"   phys="cam5"                          > 0.8975D0 </cldfrc_rhminl>
+---
+> <cldfrc_rhminl hgrid="1.9x2.5"   phys="cam5"                          > 0.8875D0 </cldfrc_rhminl>

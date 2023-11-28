@@ -784,11 +784,11 @@
 
 <wiso_formulation>model</wiso_formulation>
 
-<wiso_comp_surf_avg_freq_opt>never</wiso_comp_surf_avg_freq_opt>
+<wiso_comp_surf_avg_freq_opt>nmonth</wiso_comp_surf_avg_freq_opt>
 
 <wiso_comp_surf_avg_freq>1</wiso_comp_surf_avg_freq>
 
-<wiso_use_nml_surf_vals>.true.</wiso_use_nml_surf_vals>
+<wiso_use_nml_surf_vals>.false.</wiso_use_nml_surf_vals>
 
 <surf_avg_d18o_const>1.000173845</surf_avg_d18o_const>
 
@@ -806,7 +806,7 @@
 <nd_init_ext(1)%file_varname>ND143</nd_init_ext(1)%file_varname>
 <nd_init_ext(2)%file_varname>ND144</nd_init_ext(2)%file_varname>
 <init_nd_init_file_fmt>nc</init_nd_init_file_fmt>
-<prescribed_filename>nd_prescribed_gx1v6_20150804.nc</prescribed_filename>
+<prescribed_filename>/glade/work/jiangzhu/data/inputdata/nd_prescribed_gx1v6_20161123.nc</prescribed_filename>
 <surf_dust_varname>dust</surf_dust_varname>
 <dust_ir_varname>ir_dust</dust_ir_varname>
 <river_con_varname>nd_con</river_con_varname>

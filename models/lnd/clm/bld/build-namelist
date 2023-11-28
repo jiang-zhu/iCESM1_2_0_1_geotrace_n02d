@@ -985,6 +985,8 @@ if ( $nl->get_value('co2_type') =~ /constant/ ) {
 add_default($nl, 'urban_hac');
 add_default($nl, 'urban_traffic');
 
+add_default($nl, 'hist_ndens');
+
 my $more_vert;
 if ($phys eq "clm4_5") {
     add_default($nl, 'more_vertlayers', 'hgrid'=>$res );

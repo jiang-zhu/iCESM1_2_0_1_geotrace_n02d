@@ -253,16 +253,17 @@ for mct, etc.
 
 <compiler COMPILER="intel">
   <!-- http://software.intel.com/en-us/articles/intel-composer-xe/ -->
-  <ADD_CPPDEFS> -DFORTRANUNDERSCORE -DNO_R16</ADD_CPPDEFS>
+  <ADD_CPPDEFS> -DFORTRANUNDERSCORE </ADD_CPPDEFS>
   <ADD_CFLAGS compile_threaded="true"> -openmp </ADD_CFLAGS>
   <ADD_FFLAGS compile_threaded="true"> -openmp </ADD_FFLAGS>
   <ADD_LDFLAGS compile_threaded="true"> -openmp </ADD_LDFLAGS>
   <FREEFLAGS> -free </FREEFLAGS>
-  <FIXEDFLAGS> -fixed -132 </FIXEDFLAGS>
+  <FIXEDFLAGS> -fixed </FIXEDFLAGS>
   <ADD_FFLAGS DEBUG="TRUE"> -O0 -g -check uninit -check bounds -check pointers -fpe0 </ADD_FFLAGS>
-  <ADD_FFLAGS DEBUG="FALSE"> -O2 </ADD_FFLAGS>
-  <FFLAGS> -no-opt-dynamic-align  -fp-model source -convert big_endian -assume byterecl -ftz -traceback -assume realloc_lhs </FFLAGS>
-  <CFLAGS> -O2 -fp-model precise </CFLAGS>
+  <ADD_FFLAGS DEBUG="FALSE"> -O2 -debug minimal </ADD_FFLAGS>
+  <ADD_CFLAGS DEBUG="FALSE"> -O2 -debug minimal </ADD_CFLAGS>
+  <FFLAGS> -qno-opt-dynamic-align  -fp-model source -convert big_endian -assume byterecl -ftz -traceback -assume realloc_lhs </FFLAGS>
+  <CFLAGS> -DFORTRANUNDERSCORE -fp-model precise -qno-opt-dynamic-align -std=gnu99</CFLAGS>
   <FFLAGS_NOOPT> -O0 </FFLAGS_NOOPT>
   <FC_AUTO_R8> -r8 </FC_AUTO_R8>
   <SFC> ifort </SFC>
@@ -865,6 +866,15 @@ for mct, etc.
   <ADD_SLIBS>$(shell $(NETCDF_PATH)/bin/nf-config --flibs) -L$(TACC_HDF5_LIB) -lhdf5</ADD_SLIBS>
   <ADD_LDFLAGS>-L$(TACC_HDF5_LIB) -lhdf5</ADD_LDFLAGS>
   <TRILINOS_PATH>$(TRILINOS_PATH)</TRILINOS_PATH>
+</compiler>
+
+<compiler MACH="derecho">
+  <ADD_CPPDEFS MODEL="gptl"> -DHAVE_NANOTIME -DBIT64 -DHAVE_VPRINTF -DHAVE_BACKTRACE -DHAVE_SLASHPROC -DHAVE_COMM_F2C -DHAVE_TIMES -DHAVE_GETTIMEOFDAY </ADD_CPPDEFS>
+  <NETCDF_PATH>$(NETCDF)</NETCDF_PATH>
+<!--  <PIO_FILESYSTEM_HINTS>lustre</PIO_FILESYSTEM_HINTS> -->
+  <PNETCDF_PATH>$(PNETCDF)</PNETCDF_PATH>
+  <ADD_SLIBS> -L$(NETCDF_PATH)/lib -lnetcdff -lnetcdf </ADD_SLIBS>
+  <ADD_SLIBS> -qmkl=cluster </ADD_SLIBS>
 </compiler>
 
 </config_compilers>

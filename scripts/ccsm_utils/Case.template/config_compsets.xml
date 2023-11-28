@@ -505,7 +505,7 @@ GEOS => GEOS5 meteorology for "stand-alone" CAM
 <CAM_DYCORE compset="_CAM" grid="a%ne[1-9]">se</CAM_DYCORE>
 
 <CAM_CONFIG_OPTS compset="_CAM4"          >-phys cam4</CAM_CONFIG_OPTS>              
-<CAM_CONFIG_OPTS compset="_CAM5"          >-phys cam5</CAM_CONFIG_OPTS> 
+<CAM_CONFIG_OPTS compset="_CAM5"          >-phys cam5 -water_tracer h2o_h216o_hdo_h218o</CAM_CONFIG_OPTS> 
 <CAM_CONFIG_OPTS compset="_CAM5%CLB"      >-clubb_sgs</CAM_CONFIG_OPTS>
 <CAM_CONFIG_OPTS compset="_CAM4%TBAM"     >-chem trop_bam</CAM_CONFIG_OPTS>
 <CAM_CONFIG_OPTS compset="_CAM4%TMOZ"     >-chem trop_mozart</CAM_CONFIG_OPTS>
@@ -819,7 +819,7 @@ CICE%PRES => prescribed cice
 <!-- ================================================================================== -->
 
 <!--- OCN_TRACER_MODULES are addidive in matches -->
-<OCN_TRACER_MODULES compset="_POP2"      >iage</OCN_TRACER_MODULES>  
+<OCN_TRACER_MODULES compset="_POP2"      >iage wiso</OCN_TRACER_MODULES>  
 <OCN_TRACER_MODULES compset="20TR.*_POP2">cfc</OCN_TRACER_MODULES> 
 <OCN_TRACER_MODULES compset="5505.*_POP2">cfc</OCN_TRACER_MODULES> 
 <OCN_TRACER_MODULES compset="_POP2%ECO"  >ecosys</OCN_TRACER_MODULES>  

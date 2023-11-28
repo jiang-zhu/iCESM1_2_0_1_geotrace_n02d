@@ -896,10 +896,10 @@ call get_proc_bounds(begg, endg, begl, endl, begc, endc, begp, endp)
 
     do m = 1, pwtrc
 
-      ptr1d => cwf%wtr_qflx_runoff(:,m)
-      call hist_addfld1d (fname='QRUNOFF_NODYNLNDUSE_'//trim(wtrcnam(m)), units='mm/s',  &
-           avgflag='A', long_name=trim(wtrcnam(m))//' total liquid runoff (does not include QSNWCPICE) not including correction for land use change', &
-           ptr_col=ptr1d, c2l_scale_type='urbanf')
+     !ptr1d => cwf%wtr_qflx_runoff(:,m)
+     !call hist_addfld1d (fname='QRUNOFF_NODYNLNDUSE_'//trim(wtrcnam(m)), units='mm/s',  &
+     !     avgflag='A', long_name=trim(wtrcnam(m))//' total liquid runoff (does not include QSNWCPICE) not including correction for land use change', &
+     !     ptr_col=ptr1d, c2l_scale_type='urbanf')
 
       ptr1d => cws%wtr_h2osno(:,m)
       call hist_addfld1d (fname='H2OSNO_'//trim(wtrcnam(m)), units='mm',  &
@@ -1036,7 +1036,7 @@ call get_proc_bounds(begg, endg, begl, endl, begc, endc, begp, endp)
 
       call hist_addfld1d (fname='FCANEQ', units='fraction',  &
            avgflag='A', long_name='fraction equilibration in canopy', &
-         ptr_pft=pps%fcaneq, set_lake=spval)
+         ptr_pft=pps%fcaneq, set_lake=spval, default='inactive')
 
       call hist_addfld1d (fname='FSOIEQ', units='fraction',  &
            avgflag='A', long_name='fraction equilibration in top soil layer', &
